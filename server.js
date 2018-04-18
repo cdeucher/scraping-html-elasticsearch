@@ -4,9 +4,6 @@ var app = require('express')()
 var request = require('request')
   , cheerio = require('cheerio');
 
-var dbport = (process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 80);
-var dbhost = (process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost');
-
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
@@ -36,5 +33,6 @@ io.sockets.on('connection', function (socket) {
     });
 });
 
-
+var dbport = (process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 80);
+var dbhost = (process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost');
 server.listen(dbport,dbhost);
