@@ -1,6 +1,6 @@
 {
   "name": "scraping",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Command line interface",
   "dependencies": {
       "express": ">=4.16.3",
