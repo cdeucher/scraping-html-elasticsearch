@@ -33,6 +33,6 @@ io.sockets.on('connection', function (socket) {
     });
 });
 
-var dbport = (process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 80);
-var dbhost = (process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost');
+var dbport = (process.env.SCRAPING_SERVICE_PORT || 80);
+var dbhost = (process.env.SCRAPING_SERVICE_HOST || 'localhost');
 server.listen(dbport,dbhost);
