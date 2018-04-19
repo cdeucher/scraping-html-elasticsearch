@@ -34,5 +34,5 @@ io.sockets.on('connection', function (socket) {
 });
 
 var dbport = (process.env.SCRAPING_SERVICE_PORT || 80);
-var dbhost = (process.env.SCRAPING_SERVICE_HOST || 'localhost');
+var dbhost = '0.0.0.0'//(process.env.SCRAPING_SERVICE_HOST || 'localhost');
 server.listen(dbport,dbhost);
